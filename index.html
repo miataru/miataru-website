@@ -23,89 +23,247 @@
 </head><body>
 
 <div class="grid flex">
-	<div align="center"><img src="/images/miataru_website-logo-250.png" border=0></div>
+	<!-- <div align="center"><img src="/images/miataru_website-logo-250.png" border="0" style="height:100px"> -->
 	<h1 class="center">
 		Miataru - be found
 	</h1>
+	</div>
+	
 	<h4 style="color:#999;margin-bottom:10px;" class="center">
 		OpenSource location tracking.
 	</h4>
 	<ul class="tabs center">
 	<li><a href="#tabr1">What is it?</a></li>
-	<li><a href="#tabr2">Applications</a></li>
-	<!-- <li><a href="#tabr3">API</a></li> -->
+	<li><a href="#tabr2">Client</a></li>
+	<li><a href="#tabr3">Server</a></li>
+	<li><a href="#tabr4">API</a></li>
+	<li><a href="#tabr5">Contribute</a></li>
 	</ul>
-	<!-- TAB 1 -->
+	<!-- What is it Tab -->
 	<div id="tabr1" class="tab-content" style="min-height:400px;">
-		<p>If you want to track where you have been and allow your own services and toolchain to access your location data you have a lot of options.</p>
+<p>Miataru or 見当たる is Japanese and means "be found" or "to come across" and it's meant to be a set of tools to allow the user to track locations and choose how to work with the data as well as how data is stored if at all.</p>		
+<p>When Google closed it’s Latitude service it suddenly became apparent how many processes in an home automation system and daily life already make use of the ability to locate devices.</p>
 <p>
-With most of the services that allow you to track your location over time you give away control over that very important piece of information. You simply don't know what all those service providers do with your data.</p>
+Some examples:
+</p>
+<ul class="alt"> 
+	<li>Being able to tell where family members are right now helps a lot when organizing your day and work – it minimizes communication overhead a lot. How many times did you call people “where are you now?”</li>
+	<li>It’s a blessing in home automation to have that meta data to control systems. Think of your house knowing you are approaching and therefore increases the heating on it’s own so it’s warm when you arrive or it lowers the heating while you are away?</li>
+	<li>Proximity Alerts help to avoid surprises (for all those who don’t like them)</li>
+	<li>Knowing the metrics of your day, week, month, year makes a lot of sense when you think about lowering transportation costs and personal energy consumption</li>
+	<li>You’re a photographer and you want to geo-tag your pictures after the shooting or you found a nice spot and you want to find it again in the future?</li>
+</ul>
 <p>
-That's why Miataru was created. Miataru or 見当たる is Japanese and means "be found" or "to come across" and it's a set of client and server application that allow you to track your location and retain full control over your location data.</p>
+Miataru is being built to fill those and more use cases around the location of devices with the simple twist that the user always can decide what happens to the data and when.
+</p>
 <p>
-Since the server application and protocol will be fully opened and can be downloaded and hosted on your own servers this means you can be in full control every second of using Miataru.</p>
+The Miataru toolset contains:
+<ul class="alt">
+	<li>OpenSource Server (a publicly available demo instance for limited usage included)</li>
+	<li>fully documented Server API</li>
+	<li>Client Applications (planned right now for iOS, Android and Web)</li>
+</ul>
+</p>
 <p>
-If you do not have the option of hosting the Miataru server yourself we're offering a free service that allows you to connect the Miataru client applications with your own services.</p>
-<p>
-By default Miataru does only store the last known location. And it only does that for a pre-defined amount of time. Nothing is written to any disk, everything is in-memory only and only available for a pre-defined time-window.</p>
-<p>
-With it's simple API it allows you to use Miataru to your own needs and practices.</p>
+For further information please refer to the next tabs on this website or the <a href="http://www.miataru.com/documents/miataruspecification.pdf">specification pdf file.</a>
+</p>
 	</div>
-	<!-- TAB 1 -->
+	<!-- What is it Tab -->
 
-	<!-- TAB 2 -->
+	<!-- Client Tab -->
 	<div id="tabr2" class="tab-content" style="min-height:400px;">
 		<div class="grid flex">
-			<div class="col_3"><h5>Client</h5></div><div class="col_9">
-				iOS Client App<p>
-				<img src="/images/iOSAppViewsWireframe.png" border="0"></p>
-				<p>The iOS application is currently in development and will be available together with the server reference implementation.</p>			
+			<div class="col_3">
+				<h5>iOS App</h5>
 			</div>
-			<hr class="alt2" />
-			<div class="col_3"><h5>Server</h5></div><div class="col_9">
-				The reference Implementation of the Miataru server is done using Node.JS and Redis and will be released as under the <a href="https://github.com/miataru/miataru-server/blob/master/LICENSE">2-clause BSD license</a>. Find more information and a download link at the <a href="https://github.com/miataru/miataru-server">GitHub pages.</a><br>
-				<div align="center">
-					<p><a href="http://nodejs.org/"><img src="/images/nodejs.png" border="0"></a></p>
-					<p><a href="http://redis.io/"><img src="/images/redis.png" border="0"></a></p>
-				</div>
+			<div class="col_9">
+			    <p>Early wireframes:</p>
+				<p><img src="/images/iOSAppViewsWireframe.png" border="0"></p>
+				<p>The iOS app is currently in development and will be available together with the server reference implementation.</p>
+			</div>
+			<div class="col_3">
+				<h5>Android App</h5>
+			</div>
+			<div class="col_9">
+				<p>The Android app is also under development currently. As soon as there's something to show-off it will be done here.</p>
+			</div>
+
+		</div>		
+	</div>
+	<!-- Client Tab -->
+	
+	<!-- Server Tab -->
+	<div id="tabr3" class="tab-content" style="min-height:400px;">
+		<div class="grid flex">
+			<div class="col_12">
+				<p>The reference Implementation of the Miataru server is done using Node.JS and Redis and will be released as under the <a href="https://github.com/miataru/miataru-server/blob/master/LICENSE">2-clause BSD license</a>. Find more information and a download link at the <a href="https://github.com/miataru/miataru-server">GitHub pages.</a>
+					<div align="center">
+						<p><a href="http://nodejs.org/"><img src="/images/nodejs.png" border="0"></a></p>
+						<p><a href="http://redis.io/"><img src="/images/redis.png" border="0"></a></p>
+					</div>
+				</p>
+				<p>
+				<ul class="alt">
+					<li>A server that stores location data (sent in using JSON and a HTTP POST request) for a given amount of seconds</li>
+					<li>After the pre-configured amount of seconds the location data for a user is "forgotten"</li>
+					<li>A server that makes available a given amount of location history, if the user wants that (not by default)</li>
+					<li>A server that offers through simple GET requests the location of a particular device and eventually a location history of configurable length/duration</li>
+					<li>The server component will be released as open source software – the protocol itself will be documented so that any self-written server can be used as well</li>
+				</ul>
+				</p>
 			</div>
 		</div>		
 	</div>
-	<!-- TAB 2 -->
+	<!-- Server Tab -->
 	
-	<!-- TAB 3
-	<div id="tabr3" class="tab-content" style="min-height:400px;">
-<!--		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
-<p>
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
-<p>
-Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p> -->
-	<!-- </div> -->
-	<!-- TAB 3 -->
+	<!-- API Tab -->
+	<div id="tabr4" class="tab-content" style="min-height:400px;">
+		<div class="grid flex">
+		<p>The Miataru API is very simple and straight forward. Generally you're posting a JSON formatted request to a service method locations and you get back a JSON formatted answer.</p>
+		<p>Please take into consideration that this has the request-for-comment status and that it can change while there's work done on client and server applications.</p>
+			<!-- /UpdateLocation -->
+			<div class="col_3">
+				<h5>/UpdateLocation</h5>
+			</div>
+			<div class="col_9">
+			<p>This method is used to update the location of a device. The device does not need to be known already to the Miataru server but it rather creates a unique identifier for itself in the client application. This unique identifier, or device ID is then used to address this particular device.</p>
+			<p>Example:</p>
+				<pre>
+{
+    "MiataruConfig": {
+        "EnableLocationHistory": "False",
+        "LocationDataRetentionTime": "15"
+    },
+    "MiataruLocation": [
+        {
+            "Device": "7b8e6e0ee5296db345162dc2ef652c1350761823",
+            "Timestamp": "1376735651302",
+            "Longitude": "10.837502",
+            "Latitude": "49.828925",
+            "HorizontalAccuracy": "50.00"
+        }
+    ]
+}
+				</pre>
+				<p>The data structure allows to post multiple location updates in one request, even for multiple devices.</p>
+			</div>
+			<!-- /UpdateLocation -->
+<hr class="alt2" />
+			<!-- /GetLocation -->
+			<div class="col_3">
+				<h5>/GetLocation</h5>
+			</div>
+			<div class="col_9">
+				<p>To retrieve a specific devices latest known location the /GetLocation method is used.</p>
+				<p>Example Request:</p>
+				<pre>
+{
+    "MiataruGetLocation": [
+        {
+            "Device": "7b8e6e0ee5296db345162dc2ef652c1350761823"
+        }
+    ]
+}
+				</pre>
+				<p>By adding more devices to the array you get the locations of multiple devices in one request.</p>
+				<p>Example Response:</p>
+				<pre>
+{
+    "MiataruLocation": [
+        {
+            "Device": "7b8e6e0ee5296db345162dc2ef652c1350761823",
+            "Timestamp": "1376735651302",
+            "Longitude": "10.837502",
+            "Latitude": "49.828925",
+            "HorizontalAccuracy": "50.00"
+        }
+    ]
+}
+				</pre>
+				<p>If there's no known location data for a device the server will report back with a filled MiataruNoLocation array.</p>
+			</div>
+			<!-- /GetLocation -->
+<hr class="alt2" />	
+			<!-- /GetLocationHistory -->
+			<div class="col_3">
+				<h5>/GetLocationHistory</h5>
+			</div>
+			<div class="col_9">
+				<p>Location History is stored on the server only if the client told the server to do so using the “EnableLocationHistory” setting in the Location Update requests. For transitions of enabling/disabling that functionality: Everytime a Location Update is received by the server with “EnableLocationHistory=false” the server removes all stored Location History till that point.</p>
+				<p>There is a server-side setting that controls up to how many Location Updates the server is storing in the Location History before it removes the oldest one.</p>
+				<p>To request the Location History of a particular device the client sends the following POST request to the GetLocationHistory service URL.</p>
+				<p>Example Request:</p>
+				<pre>
+{
+    "MiataruGetLocationHistory": {
+        "Device": "7b8e6e0ee5296db345162dc2ef652c1350761823",
+        "Amount": "25"
+    }
+}
+				</pre>
+				<p>The server will answer back with an Array of LocationUpdates if there are Location Updates, or a List of NoLocations when there are none. If the client requested more Location Updates than there are available the server will return those available.</p>
+				<p>Example Response:</p>
+				<pre>
+{
+    "MiataruServerConfig": {
+        "MaximumNumberOfLocationUpdates": "1000"
+    },
+    "MiataruLocation": [
+        {
+            "Device": "7b8e6e0ee5296db345162dc2ef652c1350761823",
+            "Timestamp": "1376735651302",
+            "Longitude": "10.837502",
+            "Latitude": "49.828925",
+            "HorizontalAccuracy": "50.00"
+        },
+        {
+            "Device": "7b8e6e0ee5296db345162dc2ef652c1350761823",
+            "Timestamp": "1376737022853",
+            "Longitude": "10.937502",
+            "Latitude": "49.858925",
+            "HorizontalAccuracy": "5.00"
+        }
+    ]
+}				
+				</pre>
+				<p>If there's no known location data for a device the server will report back with a MiataruNoLocation array instead of a MiataruLocation array.</p>
+			</div>
+			<!-- /GetLocationHistory -->
 
+		</div>
+	</div>
+	<!-- API Tab -->
+
+	
+	<!-- Contribute Tab -->
+	<div id="tabr5" class="tab-content" style="min-height:400px;">
+		<div class="grid flex">
+		<p>Miataru is an open source project and like most open source projects it depends on the contributions by passionate developers out there. If you want to take part in the development process feel free to contact us or send in pull requests.</p>
+		<p>On purpose we are using a widely accepted open source license that allows you to do whatever you like with the source code as long as you refer to the original creators of it.</p>
+		</div>
+	</div>
+	<!-- Contribute Tab -->
+
+    <!-- Fork me Punch-Out -->
 	<div class="callout clearfix">
 	    <div class="grid">
 	        <a class="button green large" href="https://github.com/miataru">
 	            <i class="icon-sitemap"></i>
-	             Fork me on GitHub
+	             Fork on GitHub
 	        </a>
+	        <a class="button blue large" href="http://www.miataru.com/documents/miataruspecification.pdf">
+				<i class="icon-download-alt"></i>
+				Specification PDF
+			</a>
 	    </div>
 	</div>
+    <!-- Fork me Punch-Out -->
 	<br>
 </div> <!-- End Grid -->
-
-<div id="footer">
-    © Copyright 2013 miataru.com / Daniel Kirstenpfad. All Rights Reserved. 
-<!--    <br></br>
-    <a href="#tabr1">
-        What is it?
-    </a>
-    • 
-    <a href="/terms-of-service">
-        Terms of Service
-    </a> -->
+<div id="footer"> © Copyright 2013 miataru.com / Daniel Kirstenpfad. All Rights Reserved. 
 </div>
-<!-- Piwik -->
+
+<!-- Piwik Tracking Code -->
 <script type="text/javascript">
   var _paq = _paq || [];
   _paq.push(["setCookieDomain", "*.miataru.com"]);
@@ -120,7 +278,8 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
     g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
   })();
 </script>
-<!-- End Piwik Code -->
+<!-- Piwik Tracking Code -->
+
 </body>
 </html>
 <!-- this website is using the HTML KickStart template: Copyright © 2011-2012 Joshua Gatcke http://www.99lime.com | HTML KickStart --->
