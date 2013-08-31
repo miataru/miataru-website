@@ -149,6 +149,15 @@
 }
 				</pre>
 				<p>The data structure allows to post multiple location updates in one request, even for multiple devices.</p>
+				<p>The server will response with a simple response message:</p>
+				<pre>
+{
+	"MiataruResponse":"ACK", 
+	"MiataruVerboseResponse":"><)))x>"
+}
+				</pre>
+				<p>The response can be ACK or NACK - if there's a NACK you got a more verbose error description in the MiataruVerboseResponse field. If it's ACK you got a nice fish there.
+				</p>
 			</div>
 			<!-- /UpdateLocation -->
 <hr class="alt2" />
