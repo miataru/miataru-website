@@ -7,8 +7,6 @@ body {
   color: #5a5a5a;
 }
 
-
-
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
@@ -44,18 +42,6 @@ body {
 }
 
 .carousel-control {
-	color: black;
-}
-
-.carousel-control:hover {
-	color: black;
-}
-
-.carousel-control:focus {
-	color: black;
-}
-
-.carousel-control {
 	width:10%;
 }
 
@@ -72,7 +58,10 @@ body {
   height: 500px;
 }*/
 
-
+.doubleheight
+{
+	line-height: 200%;
+}
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
@@ -101,7 +90,7 @@ body {
 ------------------------- */
 
 .featurette-divider {
-  margin: 40px 0; /* Space out the Bootstrap <hr> more */
+  margin: 20px 0; /* Space out the Bootstrap <hr> more */
 }
 
 /* Thin out the marketing headings */
@@ -149,5 +138,6 @@ body {
 @media (min-width: 992px) {
   .featurette-heading {
     margin-top: 50px;
+    margin-left: 20px;
   }
 }
