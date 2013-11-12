@@ -125,10 +125,10 @@
 	<div id="tabr4" class="tab-content" style="min-height:400px;">
 		<div class="grid flex">
 		<p>The Miataru API is very simple and straight forward. Generally you're posting (HTTP POST) a JSON formatted request to a service method locations and you get back a JSON formatted answer.</p>
-		<p>Please take into consideration that this has the request-for-comment status and that it can change while there's work done on client and server applications.</p>
+		<p>Please take into consideration that this has the request-for-comment status and that it can change while there's work done on client and server applications. Versioning therefore is done by prepending the version number - /v1/ for version 1 - to the method call.</p>
 			<!-- /UpdateLocation -->
 			<div class="col_3">
-				<h5>/UpdateLocation</h5>
+				<h5>/v1/UpdateLocation</h5>
 			</div>
 			<div class="col_9">
 			<p>This method is used to update the location of a device. The device does not need to be known already to the Miataru server but it rather creates a unique identifier for itself in the client application. This unique identifier, or device ID is then used to address this particular device.</p>
@@ -165,7 +165,7 @@
 <hr class="alt2" />
 			<!-- /GetLocation -->
 			<div class="col_3">
-				<h5>/GetLocation</h5>
+				<h5>/v1/GetLocation</h5>
 			</div>
 			<div class="col_9">
 				<p>To retrieve a specific devices latest known location the /GetLocation method is used.</p>
@@ -200,7 +200,7 @@
 <hr class="alt2" />	
 			<!-- /GetLocationHistory -->
 			<div class="col_3">
-				<h5>/GetLocationHistory</h5>
+				<h5>/v1/GetLocationHistory</h5>
 			</div>
 			<div class="col_9">
 				<p>Location History is stored on the server only if the client told the server to do so using the “EnableLocationHistory” setting in the Location Update requests. For transitions of enabling/disabling that functionality: Everytime a Location Update is received by the server with “EnableLocationHistory=false” the server removes all stored Location History till that point.</p>
