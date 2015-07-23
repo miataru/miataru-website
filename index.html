@@ -198,10 +198,14 @@
 				<h5>/v1/GetLocation</h5>
 			</div>
 			<div class="col_9">
-				<p>To retrieve a specific devices latest known location the /GetLocation method is used.</p>
+				<p>To retrieve a specific devices latest known location the /GetLocation method is used. Please note that the MiataruConfig portion is optional. RequestMiataruDeviceID should be the ID of the device the request is sent from (or an identifier like an URL).</p>
 				<p>Example Request:</p>
 				<pre>
 {
+    "MiataruConfig": 
+    {
+        "RequestMiataruDeviceID": "6140c3c0-4a7d-40d2-99ab-39414cac3509"
+    },
     "MiataruGetLocation": [
         {
             "Device": "7b8e6e0ee5296db345162dc2ef652c1350761823"
@@ -235,10 +239,13 @@
 			<div class="col_9">
 				<p>Location History is stored on the server only if the client told the server to do so using the “EnableLocationHistory” setting in the Location Update requests. For transitions of enabling/disabling that functionality: Everytime a Location Update is received by the server with “EnableLocationHistory=false” the server removes all stored Location History till that point.</p>
 				<p>There is a server-side setting that controls up to how many Location Updates the server is storing in the Location History before it removes the oldest one.</p>
-				<p>To request the Location History of a particular device the client sends the following POST request to the GetLocationHistory service URL.</p>
+				<p>To request the Location History of a particular device the client sends the following POST request to the GetLocationHistory service URL.  Please note that the MiataruConfig portion is optional. RequestMiataruDeviceID should be the ID of the device the request is sent from (or an identifier like an URL).</p>
 				<p>Example Request:</p>
 				<pre>
-{
+{   "MiataruConfig": 
+    {
+        "RequestMiataruDeviceID": "6140c3c0-4a7d-40d2-99ab-39414cac3509"
+    },
     "MiataruGetLocationHistory": {
         "Device": "7b8e6e0ee5296db345162dc2ef652c1350761823",
         "Amount": "25"
@@ -274,7 +281,47 @@
 				<p>If there's no known location data for a device the server will report back with a MiataruNoLocation array instead of a MiataruLocation array.</p>
 			</div>
 			<!-- /GetLocationHistory -->
-
+<hr class="alt2" />	
+			<!-- /GetLocationHistory -->
+			<div class="col_3">
+				<h5>/v1/GetVisitorHistory</h5>
+			</div>
+			<div class="col_9">
+				<p>Visitor History is stored on the server with every request to the location or location history information of a device.</p>
+				<p>There is a server-side setting that controls up to how many Visitors the server is storing in the Visitor History before it removes the oldest one.</p>
+				<p>To request the Visitor History of a particular device the client sends the following POST request to the GetVisitorHistory service URL.</p>
+				<p>Example Request:</p>
+				<pre>
+{
+    "MiataruGetVisitorHistory": {
+        "Device": "7b8e6e0ee5296db345162dc2ef652c1350761823",
+        "Amount": "25"
+    }
+}
+				</pre>
+				<p>The server will answer back with an Array of MiataruVisitors if there are Visitors, or an empty list when there are none. If the client requested more Visitor Updates than there are available the server will return those available.</p>
+				<p>Example Response:</p>
+				<pre>
+{
+    "MiataruServerConfig": {
+        "MaximumNumberOfVisitorHistory": "10",
+        "AvailableVisitorHistory": "2"
+    },
+    "MiataruVisitors": [
+        {
+            "DeviceID": "7b8e6e0ee5296db345162dc2ef652c1350761823",
+            "TimeStamp": "1437683462"
+        },
+        {
+            "DeviceID": "7b8e6e0ee5296db345162dc2ef652c1350761823",
+            "TimeStamp": "1437683462"
+        }
+    ]
+}				
+				</pre>
+				<p>If there's no known location data for a device the server will report back with a MiataruNoLocation array instead of a MiataruLocation array.</p>
+			</div>
+			<!-- /GetLocationHistory -->
 		</div>
 	</div>
 	<!-- API Tab -->
